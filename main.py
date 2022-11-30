@@ -53,6 +53,9 @@ while not is_game_over():
             congratulate_user()
             exit()
         print(f"That's right! {WORDS_TO_WIN - guessed} to go")
+    if guess in guesses:
+        print("you already used this word")
+        errors += 1
     else:
         errors += 1
         print(f"Oops :( No such word, you have {ERRORS_TO_LOSE - errors} lives more")
